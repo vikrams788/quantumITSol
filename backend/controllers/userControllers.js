@@ -88,7 +88,7 @@ exports.login = async (req, res) => {
 
 exports.logout = (req, res) => {
     try {
-        res.clearCookie('token' && 'refreshToken');
+        res.clearCookie('token');
         res.status(200).json({message: "Logged out successfully"});
     } catch (error) {
         console.log("Error logging out: ", error);

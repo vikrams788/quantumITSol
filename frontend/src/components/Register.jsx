@@ -40,7 +40,7 @@ const Register = () => {
 
       setTimeout(() => {
         navigate('/');
-      }, 200);
+      }, 1000);
     } catch (error) {
       console.error('Registration failed:', error);
     }

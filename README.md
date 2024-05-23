@@ -15,10 +15,14 @@ User Management System is a web application built with React.js and Node.js that
 
 1. Frontend:
 
-- React.js
-- React Router
+- React
+- React Dom
+- React Router 
+- React Router Dom
+- Dotenv
+- React Icons
 - Axios
-- React Toastify
+- React Paginate
 
 2. Backend:
 
@@ -28,6 +32,10 @@ User Management System is a web application built with React.js and Node.js that
 - Mongoose
 - bcrypt
 - JSON Web Tokens (JWT)
+- CORS
+- Dotenv
+- Cookie Parser
+- Body Parser
 
 ## Installation
 

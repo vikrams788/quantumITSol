@@ -5,7 +5,6 @@ import { BsCalendarDate } from "react-icons/bs";
 import { PiUserCircleFill } from "react-icons/pi";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -24,16 +23,6 @@ const Register = () => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Credentials": true,
       } });
-
-      toast.success('Login successful!', {
-        position: 'top-right',
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
 
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));

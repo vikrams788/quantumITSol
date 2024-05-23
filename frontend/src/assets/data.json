@@ -1,0 +1,142 @@
+[
+    {
+        "userId": "1",
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "status": "Active",
+        "role": "Admin"
+    },
+    {
+        "userId": "2",
+        "name": "Bob Smith",
+        "email": "bob.smith@example.com",
+        "status": "Inactive",
+        "role": "User"
+    },
+    {
+        "userId": "3",
+        "name": "Charlie Brown",
+        "email": "charlie.brown@example.com",
+        "status": "Active",
+        "role": "User"
+    },
+    {
+        "userId": "4",
+        "name": "Diana Prince",
+        "email": "diana.prince@example.com",
+        "status": "Active",
+        "role": "Moderator"
+    },
+    {
+        "userId": "5",
+        "name": "Evan Peters",
+        "email": "evan.peters@example.com",
+        "status": "Inactive",
+        "role": "User"
+    },
+    {
+        "userId": "6",
+        "name": "Fiona Gallagher",
+        "email": "fiona.gallagher@example.com",
+        "status": "Active",
+        "role": "User"
+    },
+    {
+        "userId": "7",
+        "name": "George Michael",
+        "email": "george.michael@example.com",
+        "status": "Active",
+        "role": "Admin"
+    },
+    {
+        "userId": "8",
+        "name": "Hannah Baker",
+        "email": "hannah.baker@example.com",
+        "status": "Inactive",
+        "role": "User"
+    },
+    {
+        "userId": "9",
+        "name": "Ian Gallagher",
+        "email": "ian.gallagher@example.com",
+        "status": "Active",
+        "role": "Moderator"
+    },
+    {
+        "userId": "10",
+        "name": "Jessica Jones",
+        "email": "jessica.jones@example.com",
+        "status": "Active",
+        "role": "User"
+    },
+    {
+        "userId": "11",
+        "name": "Kevin Hart",
+        "email": "kevin.hart@example.com",
+        "status": "Inactive",
+        "role": "User"
+    },
+    {
+        "userId": "12",
+        "name": "Laura Palmer",
+        "email": "laura.palmer@example.com",
+        "status": "Active",
+        "role": "User"
+    },
+    {
+        "userId": "13",
+        "name": "Mike Ross",
+        "email": "mike.ross@example.com",
+        "status": "Inactive",
+        "role": "User"
+    },
+    {
+        "userId": "14",
+        "name": "Nancy Drew",
+        "email": "nancy.drew@example.com",
+        "status": "Active",
+        "role": "User"
+    },
+    {
+        "userId": "15",
+        "name": "Oscar Wilde",
+        "email": "oscar.wilde@example.com",
+        "status": "Active",
+        "role": "Admin"
+    },
+    {
+        "userId": "16",
+        "name": "Pam Beesly",
+        "email": "pam.beesly@example.com",
+        "status": "Inactive",
+        "role": "User"
+    },
+    {
+        "userId": "17",
+        "name": "Quincy Adams",
+        "email": "quincy.adams@example.com",
+        "status": "Active",
+        "role": "Moderator"
+    },
+    {
+        "userId": "18",
+        "name": "Rachel Green",
+        "email": "rachel.green@example.com",
+        "status": "Active",
+        "role": "User"
+    },
+    {
+        "userId": "19",
+        "name": "Steve Rogers",
+        "email": "steve.rogers@example.com",
+        "status": "Active",
+        "role": "Admin"
+    },
+    {
+        "userId": "20",
+        "name": "Tony Stark",
+        "email": "tony.stark@example.com",
+        "status": "Inactive",
+        "role": "User"
+    }
+]  

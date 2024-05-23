@@ -1,10 +1,10 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { generateTokens } = require('../utils/tokenUtils');
+const jwt = require('jsonwebtoken');
 
 exports.register = async (req, res) => {
     try {
-        const { username, email, rememberMe, password, dob } = req.body;
+        const { username, email, password, dob } = req.body;
 
         const existingUser = await User.findOne({email});
         if(existingUser) {
@@ -24,29 +24,19 @@ exports.register = async (req, res) => {
 
         await newUser.save();
 
-        const { accessToken, refreshToken } = generateTokens(newUser._id);
+        const token = jwt.sign({userId: newUser._id}, process.env.JWT_SECRETKEY, {expiresIn: '2d'})
 
-        if (rememberMe) {
-            res.cookie('refreshToken', refreshToken, {
-                httpOnly: true,
-                secure: true,
-                sameSite: 'None',
-                expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
-            });
-        }
-
-        res.cookie('token', accessToken, {
+        res.cookie('token', token, {
             httpOnly: true,
             secure: true,
             sameSite: 'None',
-            expires: new Date(Date.now() + 10800000),
+            expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
         });
 
         res.status(201).json({
             message: "User created successfully!",
             user: newUser,
-            token: accessToken,
-            refreshToken: refreshToken,
+            token: token,
         });
     }
     catch(error) {
@@ -56,7 +46,7 @@ exports.register = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        const { username, password, rememberMe } = req.body;
+        const { username, password } = req.body;
 
         const user = await User.findOne({username});
         if(!user) {
@@ -72,32 +62,23 @@ exports.login = async (req, res) => {
             });
         }
 
-        const { accessToken, refreshToken } = generateTokens(user._id);
+        const token = jwt.sign({userId: user._id}, process.env.JWT_SECRETKEY, {expiresIn: '2d'})
 
-        if (rememberMe) {
-            res.cookie('refreshToken', refreshToken, {
-                httpOnly: true,
-                secure: true,
-                sameSite: 'None',
-                expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
-            });
-        }
-
-        res.cookie('token', accessToken, {
+        res.cookie('token', token, {
             httpOnly: true,
             secure: true,
             sameSite: 'None',
-            expires: new Date(Date.now() + 10800000),
+            expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
         });
 
         res.status(201).json({
-            message: "User logged in successfully",
+            message: "User created successfully!",
             user: user,
-            token: accessToken,
-            refreshToken: refreshToken,
+            token: token,
         });
     }
     catch(error) {
+        console.log(error);
         res.status(501).json({
             "message": "Internal Server Error",
             "Error: ": error
@@ -106,5 +87,11 @@ exports.login = async (req, res) => {
 };
 
 exports.logout = (req, res) => {
-    res.clearCookie('token' && 'refreshToken');
+    try {
+        res.clearCookie('token' && 'refreshToken');
+        res.status(200).json({message: "Logged out successfully"});
+    } catch (error) {
+        console.log("Error logging out: ", error);
+        res.status(500).json({message: "Internal server error"});
+    }
 }

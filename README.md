@@ -17,9 +17,7 @@ User Management System is a web application built with React.js and Node.js that
 
 - React.js
 - React Router
-- React Bootstrap
 - Axios
-- React Paginate
 - React Toastify
 
 2. Backend:
@@ -77,11 +75,6 @@ User Management System is a web application built with React.js and Node.js that
 - Once logged in, you will be redirected to the home page where you can view your user information.
 - User information is displayed in a table format, showing the username, email, date of birth, and other details.
 
-4. Pagination:
-
-- If there are multiple users, the application paginates the user data to display a limited number of users per page.
-- Use the pagination controls at the bottom of the table to navigate between pages.
-
-5. Logout:
+4. Logout:
 
 - Click on the "Logout" button to securely log out of your account.

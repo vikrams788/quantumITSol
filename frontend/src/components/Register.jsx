@@ -12,14 +12,13 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [dob, setDOB] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
 
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/api/register", { username, email, password, dob, rememberMe },
+      const response = await axios.post("http://localhost:4000/api/register", { username, email, password, dob },
       { withCredentials: true, headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Credentials": true,
@@ -36,10 +35,11 @@ const Register = () => {
       });
 
       localStorage.setItem('token', response.data.token);
-      localStorage.setItem('refreshToken', response.data.refreshToken);
       localStorage.setItem('user', JSON.stringify(response.data.user));
 
-      // navigate('/')
+      setTimeout(() => {
+        navigate('/');
+      }, 200);
     } catch (error) {
       console.error('Registration failed:', error);
     }
@@ -90,8 +90,6 @@ const Register = () => {
                 type="checkbox"
                 className="form-check-input"
                 id="rememberMe"
-                checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
               />
               <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
             </div>

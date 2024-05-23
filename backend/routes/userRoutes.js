@@ -8,6 +8,6 @@ router.post('/login', userControllers.login);
 router.post('/register', userControllers.register);
 
 //protected
-router.post('/logout', authMiddleware, userControllers.logout);
+router.get('/logout', authMiddleware, userControllers.logout);
 
 module.exports = router;

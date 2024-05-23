@@ -18,6 +18,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
+
       const response = await axios.post("http://localhost:4000/api/register", { username, email, password, dob },
       { withCredentials: true, headers: {
         "Content-Type": "application/json",
@@ -96,7 +97,7 @@ const Register = () => {
             <button type="submit" className='btn my-2' style={{backgroundColor: "#00FFFF", color: "#367588", fontWeight: "700"}}>
               SIGNUP
             </button>
-            <a className='mx-auto' style={{textDecoration: "none", color: "#87CEEB"}} href="/register">Already a user? Login now!</a>
+            <p className='mx-auto' style={{textDecoration: "none", color: "#87CEEB", cursor: "pointer"}} onClick={() => navigate('/login')}>Already a user? Login now!</p>
           </form>
         </div>
       </div>

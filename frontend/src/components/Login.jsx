@@ -93,7 +93,7 @@ const Login = () => {
             <button type="submit" className="btn my-2" style={{backgroundColor: "#00FFFF", color: "#367588", fontWeight: "700"}}>
               LOGIN
             </button>
-            <a className='mx-auto' style={{textDecoration: "none", color: "#87CEEB"}} href="/register">Not a user? Register now!</a>
+            <p className='mx-auto' style={{textDecoration: "none", color: "#87CEEB", cursor: "pointer"}} onClick={() => navigate('/register')}>Not a user? Register now!</p>
           </form>
         </div>
       </div>
